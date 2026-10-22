@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="reconciliation_ceisa_view_list" model="ir.ui.view">
+        <field name="name">reconciliation.ceisa.list</field>
+        <field name="model">reconciliation.ceisa</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="periode"/>
+                <field name="responsible" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="reconciliation_ceisa_view_form" model="ir.ui.view">
+        <field name="name">reconciliation.ceisa.form</field>
+        <field name="model">reconciliation.ceisa</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_download_template" type="object"
+                            string="Download Template" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="periode"/>
+                        <h1><field name="periode" required="1"/></h1>
+                    </div>
+                    <group>
+                        <field name="responsible" required="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Rekon Line" name="lines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="ceisa_filename" column_invisible="True"/>
+                                    <field name="ceisa_file" filename="ceisa_filename" widget="binary"/>
+                                    <field name="inventory_filename" column_invisible="True"/>
+                                    <field name="inventory_file" filename="inventory_filename" widget="binary"/>
+                                    <button name="action_generate" type="object" string="Generate"
+                                            class="btn-secondary" invisible="not ceisa_file or not inventory_file"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="reconciliation_ceisa_action" model="ir.actions.act_window">
+        <field name="name">Rekonsiliasi Ceisa</field>
+        <field name="res_model">reconciliation.ceisa</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_cerdas_root" name="CERDAS" sequence="10"
+              web_icon="csl_cerdas,static/description/icon.png"/>
+    <menuitem id="menu_reconciliation_ceisa" name="Rekonsiliasi Ceisa"
+              parent="menu_cerdas_root" action="reconciliation_ceisa_action" sequence="10"/>
+</odoo>

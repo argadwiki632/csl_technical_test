@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_reconciliation_ceisa_user,reconciliation.ceisa user,model_reconciliation_ceisa,base.group_user,1,1,1,1
+access_reconciliation_ceisa_line_user,reconciliation.ceisa.line user,model_reconciliation_ceisa_line,base.group_user,1,1,1,1
