@@ -11,7 +11,7 @@ integrasi langsung dengan API CEISA.
 | Versi | `18.0.1.0.0` |
 | Lisensi | LGPL-3 |
 | Dependensi addon | `mail` |
-| Library Python | `openpyxl`, `xlsxwriter` |
+| Library Python | `openpyxl`, `xlsxwriter` (just info karena 2 library sudah masuk ke requirement.txt install odoo) |
 
 ## Fitur
 
