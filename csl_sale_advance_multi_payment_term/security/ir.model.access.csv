@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_order_top_salesman,sale.order.top salesman,model_sale_order_top,sales_team.group_sale_salesman,1,1,1,1
-access_sale_order_top_invoice,sale.order.top billing,model_sale_order_top,account.group_account_invoice,1,0,0,0
-access_sale_order_top_history_salesman,sale.order.top.history salesman,model_sale_order_top_history,sales_team.group_sale_salesman,1,0,0,0
-access_sale_order_top_history_invoice,sale.order.top.history billing,model_sale_order_top_history,account.group_account_invoice,1,0,0,0
-access_sale_order_top_reject_salesman,sale.order.top.reject salesman,model_sale_order_top_reject,sales_team.group_sale_salesman,1,1,1,0
